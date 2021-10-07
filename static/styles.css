@@ -1,6 +1,6 @@
 #color-box {
-    padding: 50px; 
-    width: 50px;
+    padding-top: 250px; 
+    width: 500px;
     background-color: red;
 }
 
@@ -14,4 +14,17 @@
 
 #blue {
     color: blue;
+}
+
+body {
+    background: whitesmoke;
+}
+
+.colors {
+    font-size: xx-large;
+}
+
+ul {
+    padding: 0;
+    list-style-type: none;
 }
