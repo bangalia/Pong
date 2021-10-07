@@ -5,15 +5,12 @@
     <link rel="stylesheet" href="./styles.css" type="text/css">
   </head>
   <body>
-    <center><h1>Pong</h1></center>
-
-    <center>
-      <div id="game-box" >
-        <div id="player1-rect" class="player-rect"></div>
-        <div id="ball"></div>
-        <div id="player2-rect" class="player-rect"></div>
-      </div>
-    </center>
+    <center><div id="color-box"></div></center>
+    <li>
+      <ul id="red">Red</ul>
+      <ul id="green">Green</ul>
+      <ul id="blue">Blue</ul>
+    </li>
     <script src="/socket.io/socket.io.js"></script>
     <script>
       let socket = io()

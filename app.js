@@ -18,9 +18,6 @@ app.use(express.static(__dirname + '/static'));
 //     res.sendFile(__dirname + '/static/index.html')
 // })
 
-//app.listen(port, () => console.log(`Pong app listening on port ${port}!`));
-
-
 io.on('connection', (socket) => {
     socket.broadcast.emit("WELCOME_USER")
 
