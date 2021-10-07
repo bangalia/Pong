@@ -9,11 +9,14 @@ const { isObject } = require("util");
 const port = 3000;
 
 //Socket.io
-// const io = require('socket.io')(server)
+const io = require('socket.io')(server)
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/static/index.html')
-})
+app.use(express.static(__dirname + '/static'));
+
+
+// app.get('/', (req, res) => {
+//     res.sendFile(__dirname + '/static/index.html')
+// })
 
 //app.listen(port, () => console.log(`Pong app listening on port ${port}!`));
 
