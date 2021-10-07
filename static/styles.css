@@ -1,5 +1,33 @@
 #game-box {
     width: 700px; 
-    border: 5px solid black; 
-    padding: 200px;
+    background-color: black; 
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-top: 300px;
+    padding-bottom: 300px;
+    position: relative;
+}
+
+.player-rect {
+    width: 50px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: white;
+    position: absolute;
+}
+
+#player1-rect {
+    right: 95%;
+    bottom: 25%;
+}
+
+#player2-rect {
+    left: 95%;
+    bottom: 25%;
+}
+
+#ball {
+    width: 10px;
+    padding: 10px;
+    background-color: white;
 }
