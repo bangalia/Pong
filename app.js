@@ -14,15 +14,14 @@ const io = require('socket.io')(server)
 app.use(express.static(__dirname + '/static'));
 
 
-// app.get('/', (req, res) => {
-//     res.sendFile(__dirname + '/static/index.html')
-// })
-
 io.on('connection', (socket) => {
     socket.broadcast.emit("WELCOME_USER")
 
     socket.on('disconnect', () => {
         console.log("user disconnected")
+    })
+    socket.on("color change", (newColor) => {
+        io.emit('color change', newColor)
     })
 })
 
