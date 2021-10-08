@@ -28,3 +28,16 @@ io.on('connection', (socket) => {
 server.listen(3000, () => {
     console.log('listening on *:3000')
 })
+
+app.get('/colors1', function (req, res) {
+    res.send(colors.slice(0,3))
+})
+
+app.get('/colors2', function (req, res) {
+    res.send(colors.slice(3,6))
+})
+
+app.get('/colors3', function (req, res) {
+    res.send(colors.slice(6))
+})
+const colors = ["Red", "Blue", "Green", "Yellow", "Orange", "Pink", "Purple", "Violet", "Brown"]

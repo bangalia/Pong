@@ -1,27 +1,22 @@
+body {
+    background: whitesmoke;
+}
+
 #color-box {
     padding-top: 250px; 
     width: 500px;
     background-color: red;
 }
 
-#red {
-    color: red;
-}
-
-#green {
-    color: green;
-}
-
-#blue {
-    color: blue;
-}
-
-body {
-    background: whitesmoke;
-}
-
 .colors {
     font-size: xx-large;
+    font-weight: 900;
+}
+
+a {
+    font-size: xx-large;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 ul {
