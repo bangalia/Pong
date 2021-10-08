@@ -1,3 +1,7 @@
+
+//Connect to the socket.io server
+const socket = io().connect();
+
 const color_box = document.getElementById('color-box')
 
 const color1 = document.getElementById('color1')
@@ -8,39 +12,10 @@ const color3 = document.getElementById('color3')
 color3.style.color = "blue";
 const current_color = 'red';
 
-// document.getElementByID('red').addEventListener('click', function (e) {
-//     color_box.style.backgroundColor = "red"
-//     if (red.value) {
-//         socket.emit("color change", red.value)
-//     }
-// })  
-
-// document.getElementByID.addEventListener('click', function(){
-//     color_box.style.backgroundColor = "green"
-// })
-
-// blue.addEventListener('click', function(){
-//     color_box.style.backgroundColor = "blue"
-// })
-
-// // socket.on('color change', function() )
-
-// $(document).on('click', '.color_box', (e) => {
-//     let newColor = e.target.textContent;
-//     socket.emit('user changed color', newColor);
-// })
-
-// socket.on('color change', function (new_color) {
-//     let item = document.createElement('li')
-//     item.textContent = `${color_box}: ${new_color}`
-// })
-
-// socket.on('connection', function () {
-//     let item = document.createElement("li")
-//     item.textContent = `New site visitor`
-//     messages.appendChild(item)
-//     window.scrollTo(0, document.body.scrollHeight)
-//   })
+socket.on('color change', colorText => {
+    color_box.style.backgroundColor = colorText;
+    console.log('Other user change the color box to: ' + colorText)
+})
 
 
 // when user clicks buttons, color_box's color changes 
@@ -48,19 +23,22 @@ const current_color = 'red';
 color1.addEventListener('click', function(){
     colorText = color1.innerText
     color_box.style.backgroundColor = colorText;
-    current_color = colorText;
+    socket.emit('color change', colorText)
+    // io.emit('color change', colorText)
 })
 
 color2.addEventListener('click', function(){
     colorText = color2.innerText
     color_box.style.backgroundColor = colorText;
-    current_color = colorText;
+    socket.emit('color change', colorText)
+    // io.emit('color change', colorText)
 })
 
 color3.addEventListener('click', function(){
     colorText = color3.innerText
     color_box.style.backgroundColor = colorText;
-    current_color = colorText;
+    socket.emit('color change', colorText)
+    // io.emit('color change', colorText)
 })
 
 // Pagination code 
@@ -103,10 +81,13 @@ page3.addEventListener('click', function(){
     color3.style.color = colors[2];
 })
 
-function httpGet(theUrl)
-{
+function httpGet(theUrl){
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
     xmlHttp.send( null );
     return JSON.parse(xmlHttp.responseText);
 }
+
+
+
+

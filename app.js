@@ -4,12 +4,10 @@ const app = express()
 const http = require('http')
 const server = http.createServer(app)
 const { Server } = require("socket.io");
+const io = require('socket.io')(server)
 const { isObject } = require("util");
 
 const port = 3000;
-
-//Socket.io
-const io = require('socket.io')(server)
 
 app.use(express.static(__dirname + '/static'));
 
@@ -17,13 +15,23 @@ app.use(express.static(__dirname + '/static'));
 io.on('connection', (socket) => {
     socket.broadcast.emit("WELCOME_USER")
 
-    socket.on('disconnect', () => {
+    io.on('disconnect', () => {
         console.log("user disconnected")
     })
-    socket.on("color change", (newColor) => {
-        io.emit('color change', newColor)
+    io.on('connect', () => {
+        console.log("user connected")
+    })
+
+    io.on('hello', () => {
+        console.log('hello')
+    })
+
+    socket.on("color change", (colorText) => {
+        io.emit('color change', colorText)
+        console.log("Color changed to:" + colorText)
     })
 })
+
 
 server.listen(3000, () => {
     console.log('listening on *:3000')
