@@ -8,12 +8,6 @@ const color3 = document.getElementById('color3')
 color3.style.color = "blue";
 const current_color = 'red';
 
-<<<<<<< HEAD
-const page1 = document.getElementById('page1')
-const page2 = document.getElementById('page2')
-const page3 = document.getElementById('page3')
-const current_page = 1;
-=======
 // document.getElementByID('red').addEventListener('click', function (e) {
 //     color_box.style.backgroundColor = "red"
 //     if (red.value) {
@@ -50,7 +44,6 @@ const current_page = 1;
 
 
 // when user clicks buttons, color_box's color changes 
->>>>>>> 8092b51d1cac767b6ad5f039363bf94479cfa9b0
 
 color1.addEventListener('click', function(){
     colorText = color1.innerText
