@@ -1,5 +1,3 @@
-const { Socket } = require("socket.io");
-
 const color_box = document.getElementById('color-box')
 
 const color1 = document.getElementById('color1')
@@ -10,10 +8,49 @@ const color3 = document.getElementById('color3')
 color3.style.color = "blue";
 const current_color = 'red';
 
+<<<<<<< HEAD
 const page1 = document.getElementById('page1')
 const page2 = document.getElementById('page2')
 const page3 = document.getElementById('page3')
 const current_page = 1;
+=======
+// document.getElementByID('red').addEventListener('click', function (e) {
+//     color_box.style.backgroundColor = "red"
+//     if (red.value) {
+//         socket.emit("color change", red.value)
+//     }
+// })  
+
+// document.getElementByID.addEventListener('click', function(){
+//     color_box.style.backgroundColor = "green"
+// })
+
+// blue.addEventListener('click', function(){
+//     color_box.style.backgroundColor = "blue"
+// })
+
+// // socket.on('color change', function() )
+
+// $(document).on('click', '.color_box', (e) => {
+//     let newColor = e.target.textContent;
+//     socket.emit('user changed color', newColor);
+// })
+
+// socket.on('color change', function (new_color) {
+//     let item = document.createElement('li')
+//     item.textContent = `${color_box}: ${new_color}`
+// })
+
+// socket.on('connection', function () {
+//     let item = document.createElement("li")
+//     item.textContent = `New site visitor`
+//     messages.appendChild(item)
+//     window.scrollTo(0, document.body.scrollHeight)
+//   })
+
+
+// when user clicks buttons, color_box's color changes 
+>>>>>>> 8092b51d1cac767b6ad5f039363bf94479cfa9b0
 
 color1.addEventListener('click', function(){
     colorText = color1.innerText
@@ -32,6 +69,13 @@ color3.addEventListener('click', function(){
     color_box.style.backgroundColor = colorText;
     current_color = colorText;
 })
+
+// Pagination code 
+
+const page1 = document.getElementById('page1')
+const page2 = document.getElementById('page2')
+const page3 = document.getElementById('page3')
+const current_page = 1;
 
 page1.addEventListener('click', function(){
     const colors = httpGet('http://localhost:3000/colors1')
